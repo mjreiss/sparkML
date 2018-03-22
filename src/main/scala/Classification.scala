@@ -14,6 +14,8 @@ object Classification {
     Logger.getLogger("org").setLevel(Level.OFF)
     Logger.getLogger("akka").setLevel(Level.OFF)
 
+    val path = getClass.getResource("SMSSpamCollection.csv").getPath
+
     val spark = SparkSession
       .builder()
       .appName("classification")
@@ -22,8 +24,6 @@ object Classification {
 
     import spark.implicits._
 
-    val path =
-      "/Users/mreiss/dev/scala/sparkml/src/main/resources/SMSSpamCollection.csv"
     val data: Dataset[Message] =
       spark.read
         .option("header", "true")

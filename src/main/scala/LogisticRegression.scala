@@ -11,7 +11,7 @@ object LogisticRegression {
     Logger.getLogger("org").setLevel(Level.OFF)
     Logger.getLogger("akka").setLevel(Level.OFF)
 
-    val path = "/Users/mreiss/dev/scala/sparkml/src/main/resources/titanic.csv"
+    val path = getClass.getResource("titanic.csv").getPath
 
     val spark = SparkSession
       .builder()

@@ -29,7 +29,7 @@ object LinearRegression {
     Logger.getLogger("org").setLevel(Level.OFF)
     Logger.getLogger("akka").setLevel(Level.OFF)
 
-    val path = "/Users/mreiss/dev/scala/sparkml/src/main/resources/Housing.csv"
+    val path = getClass.getResource("Housing.csv").getPath
 
     val spark = SparkSession.builder
       .appName("linearregression")
